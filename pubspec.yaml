@@ -40,6 +40,7 @@ dependencies:
   firebase_storage:
   cloud_firestore:
   intl:
+  provider:
 
 dev_dependencies:
   flutter_test:
