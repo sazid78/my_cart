@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:my_cart/screens/add_product_screen.dart';
 import 'package:my_cart/screens/categories_screen.dart';
 import 'package:my_cart/screens/dashboard_screen.dart';
@@ -17,13 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: EasyLoading.init(),
       title: "My Cart",
       theme:  ThemeData(
         colorScheme: ColorScheme.light().copyWith(primary: Colors.deepPurple),
         inputDecorationTheme:  InputDecorationTheme(
-
           fillColor: Colors.grey.shade200,
           filled: true,
+          // labelStyle: const TextStyle(color: Colors.grey),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color:  Colors.deepPurple
@@ -45,6 +47,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white
         )
       ),
+      debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName : (context) => const SplashScreen(),

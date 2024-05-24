@@ -41,6 +41,10 @@ dependencies:
   cloud_firestore:
   intl:
   provider:
+  cached_network_image:
+  flutter_easyloading:
+  connectivity_plus: ^5.0.2
+  image_picker:
 
 dev_dependencies:
   flutter_test:
