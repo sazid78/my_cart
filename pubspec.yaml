@@ -45,6 +45,7 @@ dependencies:
   flutter_easyloading:
   connectivity_plus: ^5.0.2
   image_picker:
+  http:
 
 dev_dependencies:
   flutter_test:

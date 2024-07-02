@@ -33,4 +33,9 @@ class DbHelper {
     return wb.commit();
   }
 
+  static Future<void> updateProductField(
+      String productId, Map<String, dynamic> map) {
+    return _db.collection(collectionProduct).doc(productId).update(map);
+  }
+
 }

@@ -1,6 +1,7 @@
 const String categoryFieldName = 'categoryName';
 const String categoryFieldId= 'categoryId';
 const String collectionCategory = 'Categories';
+const String categoryFieldProductCount='productCount';
 
 class CategoryModel {
   String? categoryId;
@@ -19,5 +20,14 @@ class CategoryModel {
     categoryId: map[categoryFieldId],
     categoryName: map[categoryFieldName]
   );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is CategoryModel &&
+              runtimeType == other.runtimeType &&
+              categoryId == other.categoryId;
+
+  @override
+  int get hashCode => categoryId.hashCode;
 }
 

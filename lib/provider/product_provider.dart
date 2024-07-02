@@ -10,6 +10,7 @@ import 'package:my_cart/models/purchase_model.dart';
 class ProductProvider extends ChangeNotifier {
   List<CategoryModel> categoryList = [];
   List<ProductModel> productList = [];
+  List<PurchaseModel> purchaseList = [];
 
   Future<void> addCategory(String category) {
     final model = CategoryModel(categoryName: category);
@@ -28,6 +29,16 @@ class ProductProvider extends ChangeNotifier {
       notifyListeners();
     });
 
+  }
+
+  Future<void> updateProductField(String productId, String field, dynamic value) {
+    return DbHelper.updateProductField(productId, {field : value});
+  }
+
+  List<PurchaseModel> getPurchaseByProductId(String productId) {
+    List<PurchaseModel> list = [];
+    list = purchaseList.where((model) => model.productModel.productId == productId).toList();
+    return list;
   }
 
   Future<String> uploadImageAndGetDownloadUrl(String path) async{
